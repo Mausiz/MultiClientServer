@@ -15,7 +15,7 @@ public class Server {
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("New client connected: " + clientSocket.getInetAddress().getHostAddress());
+                System.out.println("New survivor connected: " + clientSocket.getInetAddress().getHostAddress());
 
                 ClientHandler clientHandler = new ClientHandler(clientSocket);
                 clients.add(clientHandler);
@@ -74,7 +74,7 @@ public class Server {
                     e.printStackTrace();
                 }
                 clients.remove(this);
-                System.out.println("Client disconnected: " + clientSocket.getInetAddress().getHostAddress());
+                System.out.println("Survivor disconnected: " + clientSocket.getInetAddress().getHostAddress());
             }
         }
 

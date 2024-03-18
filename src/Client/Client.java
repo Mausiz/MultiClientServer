@@ -12,8 +12,8 @@ public class Client {
         Scanner scanner = null;
 
         try {
-            socket = new Socket("localhost", 8000); //Test: Haven't tested with another machine yet
-            System.out.println("Connected to server.");
+            socket = new Socket("localhost", 8000); //Test: None with another machine yet
+            System.out.println("Connected to a server within your radar.");
 
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
@@ -24,7 +24,7 @@ public class Client {
                 try {
                     String message;
                     while ((message = reader.readLine()) != null) {
-                        System.out.println("Received: " + message);
+                        System.out.println("Survivor in radar(Received): " + message);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
